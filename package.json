@@ -1,0 +1,26 @@
+{
+  "name": "@openclaw/memoryz",
+  "version": "0.1.0",
+  "private": true,
+  "description": "OpenClaw persistent memory plugin — Obsidian-style markdown vault with hot/warm/cold tiers",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@sinclair/typebox": "0.34.48",
+    "openai": "^6.27.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.0",
+    "vitest": "^3.0.0",
+    "@types/node": "^22.0.0"
+  },
+  "openclaw": {
+    "extensions": [
+      "./src/index.ts"
+    ]
+  }
+}

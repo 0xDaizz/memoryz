@@ -1,0 +1,53 @@
+{
+  "id": "memoryz",
+  "name": "Memoryz",
+  "description": "Persistent memory plugin — Obsidian-style markdown vault with hot/warm/cold tiers",
+  "kind": null,
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "vaultPath": { "type": "string" },
+      "summarizer": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "provider": { "type": "string", "enum": ["openai-compatible", "rules", "agent-model"] },
+          "baseUrl": { "type": "string" },
+          "model": { "type": "string" },
+          "apiKey": { "type": "string" }
+        }
+      },
+      "tiers": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "hotMaxAge": { "type": "number" },
+          "warmMaxAge": { "type": "number" },
+          "coldArchiveAge": { "type": "number" },
+          "hotMaxNotes": { "type": "number" }
+        }
+      },
+      "recall": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "enabled": { "type": "boolean" },
+          "maxPointers": { "type": "number" },
+          "maxTokens": { "type": "number" }
+        }
+      },
+      "capture": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "enabled": { "type": "boolean" },
+          "minLength": { "type": "number" },
+          "maxPerTurn": { "type": "number" }
+        }
+      },
+      "consolidateIntervalMs": { "type": "number" },
+      "accessControl": { "type": "boolean" }
+    }
+  }
+}
